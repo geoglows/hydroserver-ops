@@ -26,4 +26,3 @@ resource "aws_s3_bucket_ownership_controls" "timescale_backup_bucket" {
   }
   depends_on = [aws_s3_bucket_public_access_block.timescale_backup_bucket]
 }
-
