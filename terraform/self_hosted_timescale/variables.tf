@@ -11,5 +11,3 @@ variable "aws_ami" {
 variable "private_key" {}
 variable "public_key" {}
 variable "aws_type" {}
-
-

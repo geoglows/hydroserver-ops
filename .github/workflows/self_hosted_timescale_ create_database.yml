@@ -35,7 +35,8 @@ permissions:
 
 jobs:
   setup-deployment:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
+
     environment: ${{ github.event.inputs.environment }}
     steps:
       - name: configureawscredentials

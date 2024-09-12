@@ -14,7 +14,8 @@ resource "aws_elastic_beanstalk_application" "hydroserver_django_app" {
 resource "aws_elastic_beanstalk_environment" "hydroserver_django_env" {
   name                = "hydroserver-${var.instance}-env"
   application         = aws_elastic_beanstalk_application.hydroserver_django_app.name
-  solution_stack_name = "64bit Amazon Linux 2 v3.6.0 running Python 3.8"
+  solution_stack_name = "64bit Amazon Linux 2023 v4.1.2 running Python 3.11"
+
 
   setting {
     namespace = "aws:elasticbeanstalk:environment"
