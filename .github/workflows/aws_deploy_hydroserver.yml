@@ -6,7 +6,7 @@ on:
       environment:
         description: 'Enter a deployment environment name.'
         required: true
-      hydroserver-version: 
+      hydroserver-version:
         description: 'Enter a version of HydroServer to use. Leave blank to use the latest version.'
         required: false
 
@@ -26,11 +26,11 @@ jobs:
           role-to-assume: arn:aws:iam::${{ vars.AWS_ACCOUNT_ID }}:role/${{ vars.AWS_IAM_ROLE }}
           role-session-name: create-hydroserver-resources
           aws-region: ${{ vars.AWS_REGION }}
-    
+
       - name: Get Latest HydroServer Version
         id: get_latest_tag
         run: echo "tag=$(curl -sL https://api.github.com/repos/hydroserver2/hydroserver-api-services/releases/latest | jq -r '.tag_name')" >> $GITHUB_OUTPUT
-        
+
       - name: Checkout Backend Repo
         uses: actions/checkout@v4
         with:
@@ -202,11 +202,11 @@ jobs:
           role-to-assume: arn:aws:iam::${{ vars.AWS_ACCOUNT_ID }}:role/${{ vars.AWS_IAM_ROLE }}
           role-session-name: create-hydroserver-resources
           aws-region: ${{ vars.AWS_REGION }}
-    
+
       - name: Get Latest HydroServer Version
         id: get_latest_tag
         run: echo "tag=$(curl -sL https://api.github.com/repos/hydroserver2/hydroserver-data-management-app/releases/latest | jq -r '.tag_name')" >> $GITHUB_OUTPUT
-    
+
       - name: Checkout Frontend Repo
         uses: actions/checkout@v4
         with:
